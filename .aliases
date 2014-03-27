@@ -13,7 +13,7 @@ alias c="cd"
 
 
 # Shortcuts
-alias bd=". ~/bd -s"
+alias bd=". ~/bin/bd/bd -s"
 alias dt="cd ~/Desktop/"
 alias q="logout"
 alias reload="source ~/.bashrc"
