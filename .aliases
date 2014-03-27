@@ -4,7 +4,6 @@ alias ...="cd ../.."
 alias ~="cd ~"
 alias -- -="cd -"
 alias c="cd"
-alias bd=". ~/bin/bd/bd -s"
 
 # Folders
 alias dt="cd ~/Desktop/"

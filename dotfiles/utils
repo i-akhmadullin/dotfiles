@@ -1,3 +1,6 @@
+. ~/bin/z/z.sh
+alias bd=". ~/bin/bd/bd -s"
+
 alias o="open"
 alias oo="open ."
 

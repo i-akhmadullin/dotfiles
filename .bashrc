@@ -12,8 +12,6 @@ export PGHOST=localhost
 export NODE_ENV='development'
 OSNAME=`uname`
 
-. ~/bin/z/z.sh
-
 if [ "$OSNAME" = "win32" ] ; then
   export NODE_PATH="~\AppData\Roaming\npm\node_modules"
 fi
