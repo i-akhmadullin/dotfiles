@@ -43,6 +43,6 @@ source ~/dotfiles/git
 # Svn
 source ~/dotfiles/svn
 # Postgres
-source ~/dotfiles/postgres
+source ~/dotfiles/pg
 # Utils
 source ~/dotfiles/utils
