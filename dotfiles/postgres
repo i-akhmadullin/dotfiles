@@ -1,0 +1,3 @@
+alias pgstart="pg_ctl -D /usr/local/var/postgres9.3 -l /usr/local/var/postgres9.3/server.log start"
+alias pgstop="pg_ctl -D /usr/local/var/postgres9.3 stop -s -m fast"
+alias pgrestore="pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d $1 $2" # db, file.dump

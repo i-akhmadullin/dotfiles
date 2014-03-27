@@ -1,242 +1,48 @@
-if [ "$OSNAME" = "Darwin" ] ; then
-	echo "Using MacOS aliases"
-else
-	echo "Using Windows aliases"
-fi
-
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
 alias ~="cd ~"
 alias -- -="cd -"
 alias c="cd"
+alias bd=". ~/bin/bd/bd -s"
 
+# Folders
+alias dt="cd ~/Desktop/"
+alias d="cd ~/Documents/Dropbox"
+alias sites="cd ~/Sites"
+alias packages="cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages"
 
 # Shortcuts
-alias bd=". ~/bin/bd/bd -s"
-alias dt="cd ~/Desktop/"
 alias q="logout"
-alias reload="source ~/.bashrc"
 alias curlresume="curl -C - -o "
 mkdircd() { mkdir "$1" -p && cd "$1"; }
-
-if [ "$OSNAME" = "Darwin" ] ; then
-	alias d="cd ~/Documents/Dropbox"
-	alias sites="cd ~/Sites"
-	alias aliases="subl ~/.aliases"
-	alias bash_profile="subl ~/.bash_profile"
-	alias bash_prompt="subl ~/.bash_prompt"
-	alias bashrc="subl ~/.bashrc"
-	alias gitconfig="subl ~/.gitconfig"
-	alias gitignore="subl ~/.gitignore"
-	alias packages="cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages"
-
-	alias o="open"
-	alias oo="open ."
-
-	# Recursively delete `.DS_Store` files
-	alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-	# Show/hide hidden files in Finder
-	alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
-	alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
-	# Hide/show all desktop icons (useful when presenting)
-	alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-	alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-else
-	alias d="cd ~/../../Dropbox/Public/"
-	alias j="cd ~/../../Dropbox/Public/JetStyle/"
-	alias h="cd ~/../../Dropbox/Public/WebServers/home/"
-	alias st2="~/../../Dropbox/Public/Sublime\ Text\ 2.0/sublime_text.exe -s -a"
-	alias st="~/../../Dropbox/Public/Sublime\ Text/sublime_text.exe -s -a"
-	alias spack="cd ~/../../Dropbox/Public/Sublime\ Text\ 2.0/Data/Packages/"
-	alias sproj="cd ~/../../Dropbox/Public/Sublime\ Text\ 2.0/Data/"
-
-	alias oo="explorer ."
-	alias denwerre="~/../../Dropbox/Public/WebServers/denwer/Restart.exe"
-fi
-
-
-# NodeJS
-alias n="node"
-alias npmi="npm i --silent"
-alias npmig="npm i -g --silent"
-alias npmip="npm i --production"
-alias npmis='npm i --save'
-alias npmisd='npm i --save-dev'
-alias npmu="npm uninstall"
-alias npme="npm --registry http://registry.npmjs.eu"
-alias npmy="npm --registry http://npm.yandex-team.ru"
-alias harmony='nvm run 0.11.9 --harmony'
-
-if [ "$OSNAME" = "Darwin" ] ; then
-	alias nhome="usr/local/lib/node_modules/"
-else
-	alias nhome="cd ~/AppData/Roaming/npm/node_modules/"
-fi
-
-
-# Extra
-alias hlog="heroku logs --tail"
-
-alias pr="play run"
-alias pd="play deps"
-
-pathadd() {
-    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-        PATH="${PATH:+"$PATH:"}$1"
-    fi
-}
-
-title() {
-    echo -ne "\033]0;"$*"\007"
-}
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
-
-# List dir contents aliases
-# ref: http://ss64.com/osx/ls.html
-# Long form no user group, color
-# alias l="ls -oG"
-# # Order by last modified, long form no user group, color
-# alias lt="ls -toG"
-# # List all except . and ..., color, mark file types, long form no user group, file size
-# alias la="ls -AGFoh"
-# # List all except . and ..., color, mark file types, long form no use group, order by last modified, file size
-# alias lat="ls -AGFoth"
-# # Concatenate and print content of files (add line numbers)
-# alias catn="cat -n"
-
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
-else # OS X `ls`
-	colorflag="-G"
-fi
-
-# List all files colorized in long format
-alias l="ls -lF ${colorflag}"
-
-# List all files colorized in long format, including dot files
-alias la="ls -laF ${colorflag}"
-
-# List only directories
-alias lsd='ls -lF ${colorflag} | grep "^d"'
-
-# Always use color output for `ls`
-alias ls="command ls ${colorflag}"
-export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
-
-# Copy my public key to my clipboard
-if [ "$OSNAME" = "Darwin" ] ; then
-	alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
-else
-	alias pubkey="cat ~/.ssh/id_rsa.pub | clip | echo '=> Public key copied to pasteboard.'"
-fi
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+# Name console tab
+title() {
+	echo -ne "\033]0;"$*"\007"
+}
 
 
+# Show/hide hidden files in Finder
+alias showhidden="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
+alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
+
+# ls modes
+source ~/dotfiles/ls
+
+# Nodejs
+source ~/dotfiles/node
 # Git
-alias g="git status"
-alias glog="git log --pretty=format:'%h %s  %ar' --graph"
-
-alias ga="git add"
-alias gnew="git add ."
-alias gup="git add -u"
-alias gall="git add -A"
-alias gap="git add -p"
-
-alias gb="git branch"
-alias gbr="git branch -va"
-alias gbdel="git branch -D"
-alias gbdelremote="git branch -rd"
-
-alias gtdel="git tag -d"
-
-alias gclsafe="git clean -n"
-alias gcl="git clean -f"
-
-alias gch="git checkout"
-
-alias gc="git commit"
-alias gc_i="git commit --author='Ilia Akhmadullin <ilya.akhmadullin@gmail.com>'"
-gcm() {
-  git commit -m "$*"
-}
-gcm_i() {
-  git commit --author="Ilia Akhmadullin <ilya.akhmadullin@gmail.com>" -m "$*"
-}
-alias gca="git commit --amend"
-alias gcup_date="git commit --amend --date='$(date -R)'"
-alias gcup_email="git commit --amend --author='Ilia Akhmadullin <ilya.akhmadullin@gmail.com>'"
-
-alias gcp="git cherry-pick"
-
-alias gd="git diff"
-alias gdc="git diff --cached"
-alias gdk="git difftool"
-alias gdahead="git diff --branches --not --remotes"
-alias glahead="git log --branches --not --remotes"
-
-alias grm="git rm"
-alias grmc="git rm --cached"
-
-alias gr="git reset"
-alias grhard="git reset --hard"
-
-alias gp="git pull"
-alias gpr="git pull --rebase"
-alias gprom="git pull --rebase origin master"
-alias gprum="git pull --rebase upstream master"
-alias gpush="git push origin master"
-alias gpull="git pull origin master"
-alias gpusho="git push origin"
-alias gpushh="git push heroku master"
-
-alias grv="git remote -v"
-alias grao="git remote add origin"
-alias grat="git remote add --track"
-alias grso="git remote set-url origin"
-
-alias greba="git rebase --abort"
-alias grebc="git rebase --continue"
-alias grebi="git rebase -i"
-
-alias grev="git revert --no-commit"
-
-alias gsh="git show"
-
-alias gs="git stash"
-alias gsa="git stash apply"
-alias gsl="git stash list"
-
-alias gpruneo="git remote prune origin"
-alias gpruneu="git remote prune upstream"
-
-alias gf="git fetch"
-alias gm="git merge"
-
-alias gcheck="git fsck"
-alias gclean="git gc"
-
-alias gignore="git update-index --assume-unchanged"
-
-alias gho="open \`git remote -v | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/git@/http:\/\//' -e's/\.git$//' | sed -E 's/(\/\/[^:]*):/\1\//'\`"
-
-ghclone() {
-    git clone git@github.com:"$1"/"$2".git && cd "$2"
-}
-
-
-# svn
-alias s="svn"
-alias sst="svn status"
-
-alias sa="svn add"
-
-alias sc="svn commit -m \"$1\""
-
-alias sup="svn update"
-
-# postgres
-alias pgstart="pg_ctl -D /usr/local/var/postgres9.3 -l /usr/local/var/postgres9.3/server.log start"
-alias pgstop="pg_ctl -D /usr/local/var/postgres9.3 stop -s -m fast"
-alias pgrestore="pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d $1 $2" # db, file.dump
+source ~/dotfiles/git
+# Svn
+source ~/dotfiles/svn
+# Postgres
+source ~/dotfiles/postgres
+# Utils
+source ~/dotfiles/utils

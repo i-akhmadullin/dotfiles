@@ -1,0 +1,16 @@
+alias n="node"
+alias npmi="npm i --silent"
+alias npmig="npm i -g --silent"
+alias npmip="npm i --production"
+alias npmis='npm i --save'
+alias npmisd='npm i --save-dev'
+alias npmu="npm uninstall"
+alias npme="npm --registry http://registry.npmjs.eu"
+alias npmy="npm --registry http://npm.yandex-team.ru"
+alias harmony='nvm run 0.11.9 --harmony'
+
+if [ "$OSNAME" = "Darwin" ] ; then
+	alias nhome="usr/local/lib/node_modules/"
+else
+	alias nhome="cd ~/AppData/Roaming/npm/node_modules/"
+fi

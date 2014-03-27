@@ -1,0 +1,11 @@
+alias o="open"
+alias oo="open ."
+
+alias aliases="subl ~/.aliases"
+alias bash_profile="subl ~/.bash_profile"
+alias bash_prompt="subl ~/.bash_prompt"
+alias bashrc="subl ~/.bashrc"
+alias gitconfig="subl ~/.gitconfig"
+alias gitignore="subl ~/.gitignore"
+
+alias reload="source ~/.bashrc"
