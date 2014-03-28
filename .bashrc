@@ -23,6 +23,14 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done
 unset file
 
+source ~/dotfiles/ls
+source ~/dotfiles/node
+source ~/dotfiles/git
+source ~/dotfiles/svn
+source ~/dotfiles/pg
+source ~/dotfiles/utils
+source ~/dotfiles/npm_completion.sh
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 

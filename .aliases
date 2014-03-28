@@ -30,18 +30,3 @@ alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles -bool false 
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-
-
-# ls modes
-source ~/dotfiles/ls
-
-# Nodejs
-source ~/dotfiles/node
-# Git
-source ~/dotfiles/git
-# Svn
-source ~/dotfiles/svn
-# Postgres
-source ~/dotfiles/pg
-# Utils
-source ~/dotfiles/utils
