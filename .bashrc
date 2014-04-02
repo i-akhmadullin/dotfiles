@@ -10,6 +10,8 @@ export PATH="/usr/local/pgsql-9.3/bin:$PATH"
 export EDITOR='subl -w'
 export PGHOST=localhost
 export NODE_ENV='development'
+export HISTCONTROL=ignoredups
+export HISTSIZE=10000
 OSNAME=`uname`
 
 if [ "$OSNAME" = "win32" ] ; then
@@ -33,10 +35,8 @@ source ~/dotfiles/npm_completion.sh
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
-
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
-
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
 
