@@ -12,3 +12,5 @@ alias gitconfig="subl ~/.gitconfig"
 alias gitignore="subl ~/.gitignore"
 
 alias reload="source ~/.bashrc"
+
+alias editorconfig="cp ~/dotfiles/editorconfig ./.editorconfig"
