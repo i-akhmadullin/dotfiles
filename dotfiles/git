@@ -1,5 +1,5 @@
-alias g="git status"
-alias glog="git log --pretty=format:'%h %s  %ar' --graph"
+alias g="git status -sb"
+alias glog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
 alias ga="git add"
 alias gnew="git add ."
